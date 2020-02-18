@@ -150,12 +150,12 @@ cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-v2ray-server is not set #V2ray服务器
 # CONFIG_PACKAGE_luci-app-pptp-vpnserver-manyusers is not set #PPTP VPN 服务器
 # CONFIG_PACKAGE_luci-app-hd-idle is not set #磁盘休眠
+# CONFIG_PACKAGE_luci-app-nlbwmon is not set #宽带流量监控
+# CONFIG_PACKAGE_luci-app-wrtbwmon is not set #实时流量监测
 EOF
 
 # 常用LuCI插件(启用):
 cat >> .config <<EOF
-CONFIG_PACKAGE_luci-app-nlbwmon=y #宽带流量监控
-CONFIG_PACKAGE_luci-app-wrtbwmon=y #实时流量监测
 CONFIG_PACKAGE_luci-app-webadmin=y #Web管理页面设置
 CONFIG_PACKAGE_luci-app-filetransfer=y #系统-文件传输
 CONFIG_PACKAGE_luci-app-autoreboot=y #定时重启
