@@ -150,8 +150,6 @@ cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-v2ray-server is not set #V2ray服务器
 # CONFIG_PACKAGE_luci-app-pptp-vpnserver-manyusers is not set #PPTP VPN 服务器
 # CONFIG_PACKAGE_luci-app-hd-idle is not set #磁盘休眠
-# CONFIG_PACKAGE_luci-app-nlbwmon is not set #宽带流量监控
-# CONFIG_PACKAGE_luci-app-wrtbwmon is not set #实时流量监测
 EOF
 
 # 常用LuCI插件(启用):
@@ -173,6 +171,9 @@ CONFIG_PACKAGE_luci-app-control-timewol=y #定时唤醒
 CONFIG_PACKAGE_luci-app-control-webrestriction=y #访问限制
 CONFIG_PACKAGE_luci-app-control-weburl=y #网址过滤
 CONFIG_PACKAGE_luci-app-flowoffload=y #Turbo ACC 网络加速
+CONFIG_PACKAGE_luci-app-nlbwmon=y #宽带流量监控
+CONFIG_PACKAGE_luci-app-wrtbwmon=y #实时流量监测
+CONFIG_PACKAGE_nlbwmon=y #流量监测程序
 EOF
 
 # 网络共享:
