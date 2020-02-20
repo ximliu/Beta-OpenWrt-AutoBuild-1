@@ -151,6 +151,7 @@ cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-mwan3helper is not set #多拨负载均衡
 # CONFIG_PACKAGE_luci-app-mwan3 is not set #多线多拨
 # CONFIG_PACKAGE_luci-app-hd-idle is not set #磁盘休眠
+# CONFIG_PACKAGE_luci-app-wrtbwmon is not set #实时流量监测
 #
 # VPN相关插件(禁用):
 #
@@ -197,7 +198,6 @@ CONFIG_PACKAGE_luci-app-control-webrestriction=y #访问限制
 CONFIG_PACKAGE_luci-app-control-weburl=y #网址过滤
 CONFIG_PACKAGE_luci-app-flowoffload=y #Turbo ACC 网络加速
 CONFIG_PACKAGE_luci-app-nlbwmon=y #宽带流量监控
-CONFIG_PACKAGE_luci-app-wrtbwmon=y #实时流量监测
 EOF
 
 # LuCI主题:
