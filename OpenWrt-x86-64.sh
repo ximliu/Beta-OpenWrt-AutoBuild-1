@@ -145,14 +145,15 @@ cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-smartdns is not set #smartdnsDNS服务
 # CONFIG_PACKAGE_luci-app-adguardhome is not set #ADguardHome去广告服务
 # CONFIG_PACKAGE_luci-app-adbyby-plus is not set #adbyby去广告
+# CONFIG_PACKAGE_luci-app-unblockneteasemusic-go is not set #解锁网易云灰色歌曲
 # CONFIG_PACKAGE_luci-app-xlnetacc is not set #迅雷快鸟
-# CONFIG_PACKAGE_luci-app-aria2 is not set #Aria2离线下载
-# CONFIG_PACKAGE_luci-app-minidlna is not set #miniDLNA服务
 # CONFIG_PACKAGE_luci-app-usb-printer is not set #USB打印机
-# CONFIG_PACKAGE_luci-app-kodexplorer is not set #可到私有云
-# CONFIG_PACKAGE_luci-app-filebrowser is not set #File Browser私有云
 # CONFIG_PACKAGE_luci-app-mwan3helper is not set #多拨负载均衡
 # CONFIG_PACKAGE_luci-app-mwan3 is not set #多线多拨
+# CONFIG_PACKAGE_luci-app-hd-idle is not set #磁盘休眠
+#
+# VPN相关插件(禁用):
+#
 # CONFIG_PACKAGE_luci-app-ipsec-vpnserver-manyusers is not set #ipsec VPN服务
 # CONFIG_PACKAGE_luci-app-zerotier is not set #Zerotier内网穿透
 # CONFIG_PACKAGE_luci-app-pppoe-relay is not set #PPPoE穿透
@@ -164,7 +165,13 @@ cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-ssr-libev-server is not set #ssr-libev服务端
 # CONFIG_PACKAGE_luci-app-ssr-python-pro-server is not set #ssr-python服务端
 # CONFIG_PACKAGE_luci-app-kcptun is not set #Kcptun客户端
-# CONFIG_PACKAGE_luci-app-hd-idle is not set #磁盘休眠
+#
+# 文件共享相关(禁用):
+#
+# CONFIG_PACKAGE_luci-app-aria2 is not set #Aria2离线下载
+# CONFIG_PACKAGE_luci-app-minidlna is not set #miniDLNA服务
+# CONFIG_PACKAGE_luci-app-kodexplorer is not set #可到私有云
+# CONFIG_PACKAGE_luci-app-filebrowser is not set #File Browser私有云
 # CONFIG_PACKAGE_luci-app-fileassistant is not set #文件助手
 # CONFIG_PACKAGE_luci-app-vsftpd is not set #FTP 服务器
 # CONFIG_PACKAGE_luci-app-samba is not set #网络共享
@@ -177,7 +184,6 @@ cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-webadmin=y #Web管理页面设置
 CONFIG_PACKAGE_luci-app-filetransfer=y #系统-文件传输
 CONFIG_PACKAGE_luci-app-autoreboot=y #定时重启
-CONFIG_PACKAGE_luci-app-unblockmusic=y #解锁网易云灰色歌曲
 CONFIG_PACKAGE_luci-app-frpc=y #Frp内网穿透
 CONFIG_PACKAGE_luci-app-upnp=y #通用即插即用UPnP(端口自动转发)
 CONFIG_PACKAGE_luci-app-softethervpn=y #SoftEtherVPN服务器
