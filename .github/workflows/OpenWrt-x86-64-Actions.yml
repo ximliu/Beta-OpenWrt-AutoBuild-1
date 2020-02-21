@@ -14,12 +14,12 @@ on:
 #    - cron: 0 22 * * *
 
 # release触发
-#  release:
-#    types: [published]
+  release:
+    types: [published]
 
 # 点赞触发
-  watch:
-    types: [started]
+#  watch:
+#    types: [started]
 
 # 编辑触发
 #  push:
@@ -34,7 +34,6 @@ on:
 #SSH_ACTIONS 开启SSH连接
 #UPLOAD_BIN_DIR上传BIN目录
 #UPLOAD_FIRMWARE上传固件目录
-#UPLOAD_RELEASE 发布固件
 
 env:
   REPO_URL: https://github.com/Lienol/openwrt
@@ -44,7 +43,6 @@ env:
   SSH_ACTIONS: false
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
-  UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
 jobs:
@@ -134,13 +132,3 @@ jobs:
       with:
         name: OpenWrt_firmware
         path: ./artifact/
-
-    - name: 发布固件
-      uses: svenstaro/upload-release-action@v1-release
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
-      with:
-        repo_token: ${{ secrets.repo_token }}
-        file: ./artifact/
-        tag: ${{ github.ref }}
-        overwrite: true
-        file_glob: true 
