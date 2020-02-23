@@ -127,7 +127,6 @@ CONFIG_PACKAGE_luci-app-passwall_INCLUDE_dns2socks=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_pdnsd=y
 CONFIG_PACKAGE_kcptun-client=y
 CONFIG_PACKAGE_haproxy=y
-CONFIG_PACKAGE_chinadns-ng=y
 CONFIG_PACKAGE_v2ray=y
 CONFIG_PACKAGE_v2ray-plugin=y
 CONFIG_PACKAGE_simple-obfs=y
@@ -167,6 +166,7 @@ cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-ssr-libev-server is not set #ssr-libev服务端
 # CONFIG_PACKAGE_luci-app-ssr-python-pro-server is not set #ssr-python服务端
 # CONFIG_PACKAGE_luci-app-kcptun is not set #Kcptun客户端
+# CONFIG_PACKAGE_chinadns-ng is not set #chinadns-ng服务
 #
 # 文件共享相关(禁用):
 #
