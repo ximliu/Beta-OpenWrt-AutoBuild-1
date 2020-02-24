@@ -122,7 +122,6 @@ CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Brook=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_kcptun=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_haproxy=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ChinaDNS_NG=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_dns2socks=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_pdnsd=y
 CONFIG_PACKAGE_kcptun-client=y
@@ -132,7 +131,6 @@ CONFIG_PACKAGE_v2ray-plugin=y
 CONFIG_PACKAGE_simple-obfs=y
 CONFIG_PACKAGE_trojan=y
 CONFIG_PACKAGE_brook=y
-CONFIG_PACKAGE_chinadns-ng=y
 CONFIG_PACKAGE_ipt2socks=y
 CONFIG_PACKAGE_shadowsocks-libev-config=y
 CONFIG_PACKAGE_shadowsocks-libev-ss-local=y
@@ -153,6 +151,11 @@ cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-mwan3 is not set #多线多拨
 # CONFIG_PACKAGE_luci-app-hd-idle is not set #磁盘休眠
 # CONFIG_PACKAGE_luci-app-wrtbwmon is not set #实时流量监测
+#
+# passwall相关(禁用):
+#
+# CONFIG_PACKAGE_chinadns-ng is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ChinaDNS_NG is not set
 #
 # VPN相关插件(禁用):
 #
