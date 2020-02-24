@@ -132,6 +132,7 @@ CONFIG_PACKAGE_v2ray-plugin=y
 CONFIG_PACKAGE_simple-obfs=y
 CONFIG_PACKAGE_trojan=y
 CONFIG_PACKAGE_brook=y
+CONFIG_PACKAGE_chinadns-ng=y
 CONFIG_PACKAGE_ipt2socks=y
 CONFIG_PACKAGE_shadowsocks-libev-config=y
 CONFIG_PACKAGE_shadowsocks-libev-ss-local=y
@@ -166,7 +167,6 @@ cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-ssr-libev-server is not set #ssr-libev服务端
 # CONFIG_PACKAGE_luci-app-ssr-python-pro-server is not set #ssr-python服务端
 # CONFIG_PACKAGE_luci-app-kcptun is not set #Kcptun客户端
-# CONFIG_PACKAGE_chinadns-ng is not set #chinadns-ng服务
 #
 # 文件共享相关(禁用):
 #
