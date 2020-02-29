@@ -106,8 +106,8 @@ EOF
 
 # 第三方插件选择:
 cat >> .config <<EOF
-# CONFIG_PACKAGE_luci-app-openclash=y #openclash客户端
 CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
+# CONFIG_PACKAGE_luci-app-openclash=y #OpenClash客户端
 # CONFIG_PACKAGE_luci-app-smartinfo=y #磁盘健康监控
 EOF
 
@@ -119,6 +119,7 @@ CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_socks=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_socks=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ChinaDNS_NG=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_v2ray-plugin=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_simple-obfs=y
@@ -129,6 +130,7 @@ CONFIG_PACKAGE_luci-app-passwall_INCLUDE_haproxy=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_dns2socks=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_pdnsd=y
 CONFIG_PACKAGE_kcptun-client=y
+CONFIG_PACKAGE_chinadns-ng=y
 CONFIG_PACKAGE_haproxy=y
 CONFIG_PACKAGE_v2ray=y
 CONFIG_PACKAGE_v2ray-plugin=y
@@ -147,7 +149,6 @@ EOF
 cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-smartdns is not set #smartdnsDNS服务
 # CONFIG_PACKAGE_luci-app-adguardhome is not set #ADguardHome去广告服务
-# CONFIG_PACKAGE_luci-app-adbyby-plus is not set #adbyby去广告
 # CONFIG_PACKAGE_luci-app-unblockneteasemusic-go is not set #解锁网易云灰色歌曲
 # CONFIG_PACKAGE_luci-app-xlnetacc is not set #迅雷快鸟
 # CONFIG_PACKAGE_luci-app-usb-printer is not set #USB打印机
@@ -158,8 +159,6 @@ cat >> .config <<EOF
 #
 # passwall相关(禁用):
 #
-# CONFIG_PACKAGE_chinadns-ng is not set
-# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ChinaDNS_NG is not set
 #
 # VPN相关插件(禁用):
 #
@@ -190,6 +189,7 @@ EOF
 
 # 常用LuCI插件(启用):
 cat >> .config <<EOF
+CONFIG_PACKAGE_luci-app-adbyby-plus=y #adbyby去广告
 CONFIG_PACKAGE_luci-app-webadmin=y #Web管理页面设置
 CONFIG_PACKAGE_luci-app-filetransfer=y #系统-文件传输
 CONFIG_PACKAGE_luci-app-autoreboot=y #定时重启
@@ -230,10 +230,11 @@ EOF
 
 # 其他软件包:
 cat >> .config <<EOF
+CONFIG_PACKAGE_autocore=y
+CONFIG_PACKAGE_zram-swap=y
 CONFIG_PACKAGE_luci-lib-json=y
 CONFIG_PACKAGE_luci-lib-jsonc=y
 CONFIG_PACKAGE_luci-mod-rpc=y
-CONFIG_PACKAGE_autocore=y
 CONFIG_PACKAGE_cgi-io=y
 CONFIG_PACKAGE_ddns-scripts_cloudflare.com-v4=y
 CONFIG_PACKAGE_ddns-scripts_freedns_42_pl=y
@@ -278,7 +279,6 @@ CONFIG_PACKAGE_libvorbis=y
 CONFIG_PACKAGE_nft-qos=y
 CONFIG_PACKAGE_nftables=y
 CONFIG_PACKAGE_zoneinfo-asia=y
-CONFIG_PACKAGE_zram-swap=y
 EOF
 
 # 
