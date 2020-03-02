@@ -215,10 +215,6 @@ CONFIG_PACKAGE_luci-theme-argon-light-mod=y
 CONFIG_PACKAGE_luci-theme-bootstrap=y
 CONFIG_PACKAGE_luci-theme-bootstrap-mod=y
 CONFIG_PACKAGE_luci-theme-netgear-mc=y
-CONFIG_PACKAGE_luci-theme-darkmatter=y
-CONFIG_PACKAGE_luci-theme-freifunk-generic=y
-CONFIG_PACKAGE_luci-theme-material=y
-CONFIG_PACKAGE_luci-theme-openwrt=y
 EOF
 
 # 常用软件包:
