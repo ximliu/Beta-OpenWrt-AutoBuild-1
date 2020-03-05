@@ -14,8 +14,8 @@ sed -i 's/max-width:200px/max-width:1000px/g' feeds/luci/modules/luci-mod-admin-
 sed -i 's/o.default = "admin"/o.default = ""/g' lienol/luci-app-passwall/luasrc/model/cbi/passwall/balancing.lua #去除haproxy默认密码(最新版已无密码)
 
 # 添加第三方软件包
-git clone https://github.com/kang-mk/OpenAppFilter package/OpenAppFilter
-git clone https://github.com/kang-mk/OpenClash package/OpenClash
+git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
+git clone https://github.com/vernesong/OpenClash package/OpenClash
 git clone https://github.com/kang-mk/luci-app-serverchan package/luci-app-serverchan
 git clone https://github.com/kang-mk/luci-app-smartinfo package/luci-app-smartinfo
 
@@ -108,7 +108,7 @@ EOF
 # 第三方插件选择:
 cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-oaf=y #应用过滤
-CONFIG_PACKAGE_luci-app-openclash=y #OpenClash客户端
+# CONFIG_PACKAGE_luci-app-openclash=y #OpenClash客户端
 CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
 # CONFIG_PACKAGE_luci-app-smartinfo=y #磁盘健康监控
 EOF
