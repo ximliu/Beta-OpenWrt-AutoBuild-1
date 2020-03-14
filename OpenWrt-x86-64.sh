@@ -154,6 +154,7 @@ EOF
 cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-smartdns is not set #smartdnsDNS服务
 # CONFIG_PACKAGE_luci-app-adguardhome is not set #ADguardHome去广告服务
+# CONFIG_PACKAGE_luci-app-unblockmusic is not set #解锁网易云灰色歌曲
 # CONFIG_PACKAGE_luci-app-unblockneteasemusic-go is not set #解锁网易云灰色歌曲
 # CONFIG_PACKAGE_luci-app-unblockneteasemusic-mini is not set #解锁网易云灰色歌曲
 # CONFIG_PACKAGE_luci-app-xlnetacc is not set #迅雷快鸟
