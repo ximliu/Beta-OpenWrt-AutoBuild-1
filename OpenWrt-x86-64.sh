@@ -152,6 +152,7 @@ EOF
 
 # 常用LuCI插件(禁用):
 cat >> .config <<EOF
+# CONFIG_PACKAGE_luci-app-webadmin is not set #Web管理页面设置
 # CONFIG_PACKAGE_luci-app-smartdns is not set #smartdnsDNS服务
 # CONFIG_PACKAGE_luci-app-adguardhome is not set #ADguardHome去广告服务
 # CONFIG_PACKAGE_luci-app-unblockmusic is not set #解锁网易云灰色歌曲
@@ -197,7 +198,6 @@ EOF
 # 常用LuCI插件(启用):
 cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-adbyby-plus=y #adbyby去广告
-CONFIG_PACKAGE_luci-app-webadmin=y #Web管理页面设置
 CONFIG_PACKAGE_luci-app-filetransfer=y #系统-文件传输
 CONFIG_PACKAGE_luci-app-autoreboot=y #定时重启
 CONFIG_PACKAGE_luci-app-frpc=y #Frp内网穿透
