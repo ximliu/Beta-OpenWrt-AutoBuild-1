@@ -386,7 +386,6 @@ CONFIG_PACKAGE_python-ctypes=y
 CONFIG_PACKAGE_python-db=y
 CONFIG_PACKAGE_python-decimal=y
 CONFIG_PACKAGE_python-distutils=y
-CONFIG_PACKAGE_python-email=y
 CONFIG_PACKAGE_python-gdbm=y
 CONFIG_PACKAGE_python-light=y
 CONFIG_PACKAGE_python-logging=y
