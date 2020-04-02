@@ -7,7 +7,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-# 替换默认Argon主题
+# 替换默认Argon主题（最新版本适配有问题，先取消）
 # rm -rf package/lean/luci-theme-argon
 # git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 
