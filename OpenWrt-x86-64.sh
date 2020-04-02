@@ -141,7 +141,6 @@ cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-unblockmusic is not set #解锁网易云灰色歌曲
 # CONFIG_PACKAGE_luci-app-airplay2 is not set #Apple AirPlay2无损音频接收服务器
 # CONFIG_PACKAGE_luci-app-usb-printer is not set #USB打印机
-
 #
 # VPN相关插件(禁用):
 #
