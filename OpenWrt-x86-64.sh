@@ -20,7 +20,7 @@ git clone https://github.com/kang-mk/luci-app-smartinfo package/luci-app-smartin
 
 # 自定义定制选项
 sed -i 's#192.168.1.1#10.0.0.1#g' package/base-files/files/bin/config_generate #定制默认IP
-sed -i 's@.*/etc/shadow*@#&@g' package/lean/default-settings/files/zzz-default-settings #取消系统默认密码
+sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings #取消系统默认密码
 sed -i 's@.*stats auth admin:root*@#&@g' package/lean/luci-app-haproxy-tcp/root/etc/haproxy_init.sh #取消haproxy默认密码
 sed -i 's#frontend ss-in#frontend ss-HAProxy#g' package/lean/luci-app-haproxy-tcp/root/etc/haproxy_init.sh #修改haproxy默认节点名称
 sed -i 's#backend ss-out#backend HAProxy-out#g' package/lean/luci-app-haproxy-tcp/root/etc/haproxy_init.sh #修改haproxy默认节点名称
