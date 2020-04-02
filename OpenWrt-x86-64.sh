@@ -123,6 +123,7 @@ EOF
 # cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
 # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
 # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
 # EOF
 
@@ -135,12 +136,12 @@ cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-hd-idle is not set #磁盘休眠
 # CONFIG_PACKAGE_luci-app-wrtbwmon is not set #实时流量监测
 # CONFIG_PACKAGE_luci-app-unblockmusic is not set #解锁网易云灰色歌曲
+# CONFIG_PACKAGE_luci-app-airplay2 is not set #Apple AirPlay2无损音频接收服务器
 # CONFIG_PACKAGE_luci-app-usb-printer is not set #USB打印机
 
 #
 # VPN相关插件(禁用):
 #
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server is not set #SSR服务器
 # CONFIG_PACKAGE_luci-app-v2ray-server is not set #V2ray服务器
 # CONFIG_PACKAGE_luci-app-pptp-server is not set #PPTP VPN 服务器
 # CONFIG_PACKAGE_luci-app-ipsec-vpnd is not set #ipsec VPN服务
@@ -151,6 +152,8 @@ cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-minidlna is not set #miniDLNA服务
 # CONFIG_PACKAGE_luci-app-vsftpd is not set #FTP 服务器
 # CONFIG_PACKAGE_luci-app-samba is not set #网络共享
+# CONFIG_PACKAGE_autosamba is not set #网络共享
+# CONFIG_PACKAGE_samba36-server is not set #网络共享
 EOF
 
 # 常用LuCI插件(启用):
