@@ -139,8 +139,10 @@ cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-hd-idle is not set #磁盘休眠
 # CONFIG_PACKAGE_luci-app-wrtbwmon is not set #实时流量监测
 # CONFIG_PACKAGE_luci-app-unblockmusic is not set #解锁网易云灰色歌曲
-# CONFIG_PACKAGE_luci-app-airplay2 is not set #Apple AirPlay2无损音频接收服务器
+# CONFIG_PACKAGE_luci-app-airplay2 is not set #Apple AirPlay2音频接收服务器
 # CONFIG_PACKAGE_luci-app-usb-printer is not set #USB打印机
+# CONFIG_PACKAGE_luci-app-usb-cpufreq is not set #CPU频率设置
+# CONFIG_PACKAGE_luci-app-usb-diskman is not set #磁盘分区管理
 #
 # VPN相关插件(禁用):
 #
