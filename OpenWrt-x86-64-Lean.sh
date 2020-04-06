@@ -17,7 +17,6 @@ git clone https://github.com/vernesong/OpenClash package/openclash
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
 git clone https://github.com/kang-mk/luci-app-smartinfo package/luci-app-smartinfo
-git clone https://github.com/kang-mk/luci-app-wrtbwmon package/luci-app-wrtbwmon
 
 # 自定义定制选项
 sed -i 's#192.168.1.1#10.0.0.1#g' package/base-files/files/bin/config_generate #定制默认IP
@@ -117,12 +116,11 @@ EOF
 
 # 第三方插件选择:
 cat >> .config <<EOF
-CONFIG_PACKAGE_luci-app-oaf=y #应用过滤
+# CONFIG_PACKAGE_luci-app-oaf=y #应用过滤
 # CONFIG_PACKAGE_luci-app-openclash=y #OpenClash
 CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
 # CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardhome
 # CONFIG_PACKAGE_luci-app-smartinfo=y #磁盘健康监控
-CONFIG_PACKAGE_luci-app-wrtbwmon=y #实时流量检测
 EOF
 
 # ShadowsocksR插件:
