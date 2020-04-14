@@ -8,8 +8,8 @@
 #=================================================
 
 # 替换默认Argon主题（最新版本适配有问题,暂取消）
-# rm -rf package/lean/luci-theme-argon
-# git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+rm -rf package/lean/luci-theme-argon
+git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 
 # 添加第三方软件包
 git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
