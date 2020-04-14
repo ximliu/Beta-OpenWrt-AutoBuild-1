@@ -198,6 +198,10 @@ CONFIG_PACKAGE_nano=y
 # CONFIG_PACKAGE_tree=y
 # CONFIG_PACKAGE_vim-fuller=y
 CONFIG_PACKAGE_wget=y
+EOF
+
+# 其他软件包:
+cat >> .config <<EOF
 CONFIG_PACKAGE_zram-swap=y
 EOF
 
