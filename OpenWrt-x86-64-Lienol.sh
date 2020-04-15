@@ -7,6 +7,9 @@
 # Blog: https://p3terx.com
 #=================================================
 
+# 替换默认wrtbwmon组件
+rm -rf package/lean/luci-app-wrtbwmon && git clone https://github.com/brvphoenix/wrtbwmon package/wrtbwmon && git clone https://github.com/brvphoenix/luci-app-wrtbwmon package/luci-app-wrtbwmon
+
 # 添加第三方软件包
 git clone https://github.com/vernesong/OpenClash package/openclash
 git clone https://github.com/kang-mk/luci-app-serverchan package/luci-app-serverchan
@@ -211,6 +214,7 @@ CONFIG_PACKAGE_luci-app-control-webrestriction=y #访问限制
 CONFIG_PACKAGE_luci-app-control-weburl=y #网址过滤
 CONFIG_PACKAGE_luci-app-flowoffload=y #Turbo ACC 网络加速
 CONFIG_PACKAGE_luci-app-nlbwmon=y #宽带流量监控
+CONFIG_PACKAGE_luci-app-wrtbwmon=y #实时流量监测
 EOF
 
 # LuCI主题:
