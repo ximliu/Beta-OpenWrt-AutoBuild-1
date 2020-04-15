@@ -11,6 +11,8 @@
 # rm -rf package/lean/luci-theme-argon && git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 # 替换更新haproxy默认版本
 rm -rf feeds/packages/net/haproxy && git clone https://github.com/kang-mk/haproxy feeds/packages/net/haproxy
+ # 替换默认wrtbwmon组件
+rm -rf package/lean/luci-app-wrtbwmon && git clone https://github.com/brvphoenix/wrtbwmon package/wrtbwmon && git clone https://github.com/brvphoenix/luci-app-wrtbwmon package/luci-app-wrtbwmon
 
 # 添加第三方软件包
 git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
