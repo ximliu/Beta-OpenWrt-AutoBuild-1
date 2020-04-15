@@ -11,8 +11,6 @@
 # rm -rf package/lean/luci-theme-argon && git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 # 替换更新haproxy默认版本
 rm -rf feeds/packages/net/haproxy && git clone https://github.com/kang-mk/haproxy feeds/packages/net/haproxy
-# 替换默认wrtbwmon组件	
-rm -rf package/lean/luci-app-wrtbwmon && git clone https://github.com/brvphoenix/luci-app-wrtbwmon package/luci-app-wrtbwmon
 
 # 添加第三方软件包
 git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
@@ -141,6 +139,7 @@ cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-xlnetacc is not set #迅雷快鸟
 # CONFIG_PACKAGE_luci-app-zerotier is not set #zerotier内网穿透
 # CONFIG_PACKAGE_luci-app-hd-idle is not set #磁盘休眠
+# CONFIG_PACKAGE_luci-app-wrtbwmon is not set #实时流量监测
 # CONFIG_PACKAGE_luci-app-unblockmusic is not set #解锁网易云灰色歌曲
 # CONFIG_PACKAGE_luci-app-airplay2 is not set #Apple AirPlay2音频接收服务器
 # CONFIG_PACKAGE_luci-app-music-remote-center is not set #PCHiFi数字转盘遥控
@@ -182,7 +181,6 @@ CONFIG_PACKAGE_luci-app-softethervpn=y #SoftEtherVPN服务器
 CONFIG_PACKAGE_luci-app-haproxy-tcp=y #Haproxy负载均衡
 CONFIG_PACKAGE_luci-app-frpc=y #Frp内网穿透
 CONFIG_PACKAGE_luci-app-nlbwmon=y #宽带流量监控
-CONFIG_PACKAGE_luci-app-wrtbwmon=y #实时流量监测
 EOF
 
 # LuCI主题:
