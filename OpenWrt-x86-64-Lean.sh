@@ -183,6 +183,7 @@ CONFIG_PACKAGE_luci-app-softethervpn=y #SoftEtherVPN服务器
 CONFIG_PACKAGE_luci-app-haproxy-tcp=y #Haproxy负载均衡
 CONFIG_PACKAGE_luci-app-frpc=y #Frp内网穿透
 CONFIG_PACKAGE_luci-app-nlbwmon=y #宽带流量监控
+CONFIG_PACKAGE_luci-app-wrtbwmon=y #实时流量监测
 EOF
 
 # LuCI主题:
