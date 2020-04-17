@@ -129,7 +129,6 @@ cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-ssr-plus=y
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
 EOF
 
