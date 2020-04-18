@@ -12,7 +12,7 @@ cat feeds.conf.default
 git clone https://github.com/vernesong/OpenClash package/openclash
 git clone https://github.com/kang-mk/luci-app-serverchan package/luci-app-serverchan
 git clone https://github.com/kang-mk/luci-app-smartinfo package/luci-app-smartinfo
-svn co https://github.com/kang-mk/lienol-package/trunk/lienol/luci-app-passwall package/luci-app-passwall
+git clone https://github.com/kang-mk/luci-app-passwall package/luci-app-passwall
 
 # 自定义定制选项
 sed -i 's#192.168.1.1#10.0.0.1#g' package/base-files/files/bin/config_generate #定制默认IP
