@@ -7,6 +7,13 @@
 # Blog: https://p3terx.com
 #=================================================
 
+# 更新并安装源
+cd openwrt
+sed -i 's@#src-git helloworld@src-git helloworld@g' feeds.conf.default #开启helloworld
+cat feeds.conf.default
+./scripts/feeds clean
+./scripts/feeds update -a && ./scripts/feeds install -a
+
 # 替换默认Argon主题（最新版本适配好像有问题,暂取消）
 # rm -rf package/lean/luci-theme-argon && git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 # 替换更新haproxy默认版本
@@ -27,7 +34,6 @@ sed -i 's#frontend ss-in#frontend HAProxy-in#g' package/lean/luci-app-haproxy-tc
 sed -i 's#backend ss-out#backend HAProxy-out#g' package/lean/luci-app-haproxy-tcp/root/etc/haproxy_init.sh #修改haproxy默认节点名称
 sed -i 's#option commit_interval 24h#option commit_interval 10m#g' feeds/packages/net/nlbwmon/files/nlbwmon.config #修改流量统计写入为10分钟
 sed -i 's#option database_directory /var/lib/nlbwmon#option database_directory /etc/config/nlbwmon_data#g' feeds/packages/net/nlbwmon/files/nlbwmon.config #修改流量统计数据存放默认位置
-sed -i 's@#src-git helloworld@src-git helloworld@g' feeds.conf.default #开启helloworld
 
 #创建自定义配置文件 - OpenWrt-x86-64
 
