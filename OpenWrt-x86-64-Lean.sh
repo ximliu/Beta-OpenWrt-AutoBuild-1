@@ -1,15 +1,9 @@
   
 #!/bin/bash
-#=================================================
-# Description: DIY script
-# Lisence: MIT
-# Author: P3TERX
-# Blog: https://p3terx.com
-#=================================================
 
 # 更新并安装源
 cd openwrt
-sed -i 's@#src-git helloworld@src-git helloworld@g' feeds.conf.default #开启helloworld
+sed -i 's@#src-git helloworld@src-git helloworld@g' feeds.conf.default #启用helloworld
 cat feeds.conf.default
 ./scripts/feeds clean
 ./scripts/feeds update -a && ./scripts/feeds install -a
