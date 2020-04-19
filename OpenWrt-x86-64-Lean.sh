@@ -26,17 +26,17 @@ sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz
 sed -i 's#option commit_interval 24h#option commit_interval 10m#g' feeds/packages/net/nlbwmon/files/nlbwmon.config #修改流量统计写入为10分钟
 sed -i 's#option database_directory /var/lib/nlbwmon#option database_directory /etc/config/nlbwmon_data#g' feeds/packages/net/nlbwmon/files/nlbwmon.config #修改流量统计数据存放默认位置
 
-# luci-app-haproxy-tcp定制项
+# luci-app-haproxy定制项
 sed -i 's@stats auth admin:root*@#&@g' package/lean/luci-app-haproxy-tcp/root/etc/haproxy_init.sh #取消haproxy默认密码
-sed -i 's@stats uri /haproxy@stats uri /@g' package/lean/luci-app-haproxy-tcp/root/etc/haproxy_init.sh #修改haproxy web路径
+sed -i 's@stats uri /haproxy@stats uri /@g' package/lean/luci-app-haproxy-tcp/root/etc/haproxy_init.sh #修改haproxy管理路径
 sed -i 's#frontend ss-in#frontend HAProxy-in#g' package/lean/luci-app-haproxy-tcp/root/etc/haproxy_init.sh #修改haproxy默认节点名称
 sed -i 's#backend ss-out#backend HAProxy-out#g' package/lean/luci-app-haproxy-tcp/root/etc/haproxy_init.sh #修改haproxy默认节点名称
-sed -i 's@:1111/haproxy@:1111@g' package/lean/luci-app-haproxy-tcp/luasrc/model/cbi/haproxy.lua #修改haproxy web页
-sed -i 's@输入用户名admin@@g' package/lean/luci-app-haproxy-tcp/luasrc/model/cbi/haproxy.lua #修改haproxy web页
-sed -i 's@用户名admin@@g' package/lean/luci-app-haproxy-tcp/luasrc/model/cbi/haproxy.lua #修改haproxy web页
-sed -i 's@密码root@@g' package/lean/luci-app-haproxy-tcp/luasrc/model/cbi/haproxy.lua #修改haproxy web页
-sed -i 's@使用说明请@@g' package/lean/luci-app-haproxy-tcp/luasrc/model/cbi/haproxy.lua #修改haproxy web页
-sed -i 's@点击这里@@g' package/lean/luci-app-haproxy-tcp/luasrc/model/cbi/haproxy.lua #修改haproxy web页
+sed -i 's@:1111/haproxy@:1111@g' package/lean/luci-app-haproxy-tcp/luasrc/model/cbi/haproxy.lua #修改haproxy管理页
+sed -i 's@输入用户名admin@@g' package/lean/luci-app-haproxy-tcp/luasrc/model/cbi/haproxy.lua #修改haproxy管理页
+sed -i 's@用户名admin@@g' package/lean/luci-app-haproxy-tcp/luasrc/model/cbi/haproxy.lua #修改haproxy管理页
+sed -i 's@密码root@@g' package/lean/luci-app-haproxy-tcp/luasrc/model/cbi/haproxy.lua #修改haproxy管理页
+sed -i 's@使用说明请@@g' package/lean/luci-app-haproxy-tcp/luasrc/model/cbi/haproxy.lua #修改haproxy管理页
+sed -i 's@点击这里@@g' package/lean/luci-app-haproxy-tcp/luasrc/model/cbi/haproxy.lua #修改haproxy管理页
 
 #创建自定义配置文件 - OpenWrt-x86-64
 
