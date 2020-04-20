@@ -42,6 +42,7 @@ env:
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   TZ: Asia/Shanghai
+  FileTime: `date +%H:%M:%S`
 
 jobs:
   build_openwrt:
@@ -101,7 +102,7 @@ jobs:
       uses: actions/upload-artifact@master
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
       with:
-        name: OpenWrt_bin_Lean_`date +%y%m%d`
+        name: OpenWrt_bin_Lean_$FileTime
         path: openwrt/bin
 
     - name: 整理文件
@@ -116,5 +117,5 @@ jobs:
     - name: 上传固件
       uses: actions/upload-artifact@master
       with:
-        name: OpenWrt_firmware_Lean_`date +%y%m%d`
+        name: OpenWrt_firmware_Lean_$FileTime
         path: ./artifact/
