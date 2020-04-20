@@ -42,7 +42,7 @@ env:
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   TZ: Asia/Shanghai
-  FileTime: `date +%H:%M:%S`
+  FileTime: date +%H:%M:%S
 
 jobs:
   build_openwrt:
