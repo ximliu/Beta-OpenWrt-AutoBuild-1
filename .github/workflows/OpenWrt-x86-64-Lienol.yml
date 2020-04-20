@@ -101,7 +101,7 @@ jobs:
       uses: actions/upload-artifact@master
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
       with:
-        name: OpenWrt_bin_Lienol
+        name: OpenWrt_bin_Lienol_`date +%y%m%d`
         path: openwrt/bin
 
     - name: 整理文件
@@ -116,5 +116,5 @@ jobs:
     - name: 上传固件
       uses: actions/upload-artifact@master
       with:
-        name: OpenWrt_firmware_Lienol
+        name: OpenWrt_firmware_Lienol_`date +%y%m%d`
         path: ./artifact/
