@@ -72,6 +72,7 @@ jobs:
 
     - name: 更新源并创建配置文件
       run: |
+        echo "::set-env name=DATE::$(date "+%Y-%m-%d %H:%M:%S")"
         [ -e files ] && mv files openwrt/files
         chmod +x $DIY_SH
         cd openwrt
@@ -101,7 +102,7 @@ jobs:
       uses: actions/upload-artifact@master
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
       with:
-        name: OpenWrt_bin_Lienol
+        name: OpenWrt_bin_Lienol_${{ env.DATE }}
         path: openwrt/bin
 
     - name: 整理文件
@@ -116,5 +117,5 @@ jobs:
     - name: 上传固件
       uses: actions/upload-artifact@master
       with:
-        name: OpenWrt_firmware_Lienol
+        name: OpenWrt_firmware_Lienol_${{ env.DATE }}
         path: ./artifact/
