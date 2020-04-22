@@ -42,6 +42,7 @@ env:
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   TZ: Asia/Shanghai
+  DATE: $(date "+%Y-%m-%d %H:%M:%S")"
 
 jobs:
   build_openwrt:
