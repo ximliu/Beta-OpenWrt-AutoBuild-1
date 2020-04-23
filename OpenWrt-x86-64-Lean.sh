@@ -14,7 +14,7 @@ cat feeds.conf.default
 rm -rf feeds/packages/net/haproxy && svn co https://github.com/kang-mk/openwrt-app-package/trunk/haproxy feeds/packages/net/haproxy
 
 # 添加第三方软件包
-svn co https://github.com/kang-mk/openwrt-app-package/trunk/helloworld package/luci-app-passwall
+svn co https://github.com/kang-mk/openwrt-app-package/trunk/helloworld package/helloworld
 git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 git clone https://github.com/vernesong/OpenClash package/openclash
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
