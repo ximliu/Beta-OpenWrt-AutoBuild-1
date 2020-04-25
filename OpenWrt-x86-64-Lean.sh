@@ -14,6 +14,7 @@ rm -rf package/lean/luci-theme-argon && git clone https://github.com/jerrykuku/l
 rm -rf feeds/packages/net/haproxy && svn co https://github.com/kang-mk/openwrt-app-package/trunk/haproxy feeds/packages/net/haproxy
 # 替换默认luci-app-wrtbwmon
 rm -rf package/lean/luci-app-wrtbwmon && git clone https://github.com/brvphoenix/luci-app-wrtbwmon package/lean/luci-app-wrtbwmon
+git clone https://github.com/brvphoenix/wrtbwmon package/lean/wrtbwmon
 
 # 添加第三方软件包
 svn co https://github.com/kang-mk/openwrt-app-package/trunk/helloworld package/helloworld
