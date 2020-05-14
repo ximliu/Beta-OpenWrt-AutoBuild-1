@@ -1,7 +1,10 @@
 
 #!/bin/bash
 
-# feeds文件编辑
+＃ 安装额外依赖
+sudo -E apt-get -y install rename
+
+# 更新feeds文件
 cd openwrt
 # sed -i 's#lienol https://github.com/Lienol/openwrt-package#lienol https://github.com/kang-mk/Lienol-openwrt-package#g' feeds.conf.default #更换默认包源
 cat feeds.conf.default
