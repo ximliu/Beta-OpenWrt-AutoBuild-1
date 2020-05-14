@@ -1,7 +1,10 @@
   
 #!/bin/bash
 
-# feeds文件编辑
+＃ 安装额外依赖
+sudo -E apt-get -y install rename
+
+# 更新feeds文件
 cd openwrt
 sed -i 's@#src-git helloworld@src-git helloworld@g' feeds.conf.default #启用helloworld
 cat feeds.conf.default
