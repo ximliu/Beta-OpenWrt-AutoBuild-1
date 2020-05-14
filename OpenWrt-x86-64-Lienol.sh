@@ -17,6 +17,10 @@ svn co https://github.com/kang-mk/openwrt-app-package/trunk/luci-app-smartinfo p
 svn co https://github.com/kang-mk/openwrt-app-package/trunk/luci-app-passwall package/luci-app-passwall
 git clone https://github.com/garypang13/luci-app-eqos package/luci-app-eqos
 
+# 更改eqos语言包目录
+find package/luci-app-eqos -maxdepth 1 -depth -name "po" | xargs -i rename -v 's/po/i18n/' {}
+find package/luci-app-eqos -maxdepth 2 -depth -name "zh_Hans" | xargs -i rename -v 's/zh_Hans/zh-cn/' {}
+
 # 自定义定制选项
 sed -i 's#192.168.1.1#10.0.0.1#g' package/base-files/files/bin/config_generate #定制默认IP
 sed -i 's#max-width:200px#max-width:1000px#g' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm #修改首页样式
@@ -159,8 +163,26 @@ CONFIG_PACKAGE_shadowsocksr-libev-alt=y
 CONFIG_PACKAGE_shadowsocksr-libev-ssr-local=y
 EOF
 
-# 常用LuCI插件(禁用):
+# 常用LuCI插件:
 cat >> .config <<EOF
+CONFIG_PACKAGE_luci-app-adbyby-plus=y #adbyby去广告
+CONFIG_PACKAGE_luci-app-webadmin=y #Web管理页面设置
+CONFIG_PACKAGE_luci-app-filetransfer=y #系统-文件传输
+CONFIG_PACKAGE_luci-app-autoreboot=y #定时重启
+CONFIG_PACKAGE_luci-app-frpc=y #Frp内网穿透
+CONFIG_PACKAGE_luci-app-upnp=y #通用即插即用UPnP(端口自动转发)
+CONFIG_PACKAGE_luci-app-softethervpn=y #SoftEtherVPN服务器
+CONFIG_DEFAULT_luci-app-vlmcsd=y #KMS激活服务器
+CONFIG_PACKAGE_luci-app-sqm=y #SQM智能队列管理
+CONFIG_PACKAGE_luci-app-ddns=y #DDNS服务
+CONFIG_PACKAGE_luci-app-wol=y #网络唤醒
+CONFIG_PACKAGE_luci-app-control-mia=y #时间控制
+CONFIG_PACKAGE_luci-app-control-timewol=y #定时唤醒
+CONFIG_PACKAGE_luci-app-control-webrestriction=y #访问限制
+CONFIG_PACKAGE_luci-app-control-weburl=y #网址过滤
+CONFIG_PACKAGE_luci-app-flowoffload=y #Turbo ACC 网络加速
+CONFIG_PACKAGE_luci-app-nlbwmon=y #宽带流量监控
+# CONFIG_PACKAGE_luci-app-diskman is not set #磁盘分区管理
 # CONFIG_PACKAGE_luci-app-smartdns is not set #smartdnsDNS服务
 # CONFIG_PACKAGE_luci-app-adguardhome is not set #ADguardHome去广告服务
 # CONFIG_PACKAGE_luci-app-unblockmusic is not set #解锁网易云灰色歌曲
@@ -172,6 +194,7 @@ cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-mwan3 is not set #多线多拨
 # CONFIG_PACKAGE_luci-app-hd-idle is not set #磁盘休眠
 # CONFIG_PACKAGE_luci-app-wrtbwmon is not set #实时流量监测
+# CONFIG_PACKAGE_luci-app-zerotier is not set #Zerotier内网穿透
 #
 # passwall相关(禁用):
 #
@@ -179,7 +202,6 @@ cat >> .config <<EOF
 # VPN相关插件(禁用):
 #
 # CONFIG_PACKAGE_luci-app-ipsec-vpnserver-manyusers is not set #ipsec VPN服务
-# CONFIG_PACKAGE_luci-app-zerotier is not set #Zerotier内网穿透
 # CONFIG_PACKAGE_luci-app-pppoe-relay is not set #PPPoE穿透
 # CONFIG_PACKAGE_luci-app-pppoe-server is not set #PPPoE服务器
 # CONFIG_PACKAGE_luci-app-pptp-vpnserver-manyusers is not set #PPTP VPN 服务器
@@ -201,28 +223,6 @@ cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-samba is not set #网络共享
 # CONFIG_PACKAGE_autosamba is not set #网络共享
 # CONFIG_PACKAGE_samba36-server is not set #网络共享
-EOF
-
-# 常用LuCI插件(启用):
-cat >> .config <<EOF
-CONFIG_PACKAGE_luci-app-adbyby-plus=y #adbyby去广告
-CONFIG_PACKAGE_luci-app-webadmin=y #Web管理页面设置
-CONFIG_PACKAGE_luci-app-filetransfer=y #系统-文件传输
-CONFIG_PACKAGE_luci-app-autoreboot=y #定时重启
-CONFIG_PACKAGE_luci-app-frpc=y #Frp内网穿透
-CONFIG_PACKAGE_luci-app-upnp=y #通用即插即用UPnP(端口自动转发)
-CONFIG_PACKAGE_luci-app-softethervpn=y #SoftEtherVPN服务器
-CONFIG_DEFAULT_luci-app-vlmcsd=y #KMS激活服务器
-CONFIG_PACKAGE_luci-app-sqm=y #SQM智能队列管理
-CONFIG_PACKAGE_luci-app-ddns=y #DDNS服务
-CONFIG_PACKAGE_luci-app-wol=y #网络唤醒
-CONFIG_PACKAGE_luci-app-control-mia=y #时间控制
-CONFIG_PACKAGE_luci-app-control-timewol=y #定时唤醒
-CONFIG_PACKAGE_luci-app-control-webrestriction=y #访问限制
-CONFIG_PACKAGE_luci-app-control-weburl=y #网址过滤
-CONFIG_PACKAGE_luci-app-flowoffload=y #Turbo ACC 网络加速
-CONFIG_PACKAGE_luci-app-nlbwmon=y #宽带流量监控
-CONFIG_PACKAGE_luci-app-diskman=y #磁盘分区管理
 EOF
 
 # LuCI主题:

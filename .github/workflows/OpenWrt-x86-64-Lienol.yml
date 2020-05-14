@@ -67,7 +67,6 @@ jobs:
     - name: 生成编译时间
       run: |
         echo "::set-env name=FILENAME::$(date "+%Y_%m_%d_%H_%M_%S")"
-        env
 
     - name: 更新源并创建配置文件
       run: |
