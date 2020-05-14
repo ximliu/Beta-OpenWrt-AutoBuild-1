@@ -31,8 +31,8 @@ env:
   REPO_URL: https://github.com/Lienol/openwrt
   REPO_BRANCH: dev-19.07
   DIY_SH: OpenWrt-x86-64-Lienol.sh
-  SSH_ACTIONS: false
-  UPLOAD_BIN_DIR: true
+  SSH_ACTIONS: true
+  UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   TZ: Asia/Shanghai
 
