@@ -2,7 +2,7 @@
 #!/bin/bash
 
 # 安装额外依赖软件包
-sudo -E apt-get -y install rename
+# sudo -E apt-get -y install rename
 
 # 更新feeds文件
 cd openwrt
@@ -18,10 +18,7 @@ git clone https://github.com/vernesong/OpenClash package/openclash
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 svn co https://github.com/kang-mk/openwrt-app-package/trunk/luci-app-smartinfo package/luci-app-smartinfo
 svn co https://github.com/kang-mk/openwrt-app-package/trunk/luci-app-passwall package/luci-app-passwall
-git clone https://github.com/garypang13/luci-app-eqos package/luci-app-eqos
-
-# 更改eqos语言包目录
-find package/luci-app-eqos/ -maxdepth 2 -depth -name "zh_Hans" | xargs -i rename -v 's/zh_Hans/zh-cn/' {}
+svn co https://github.com/kang-mk/openwrt-app-package/trunk/luci-app-eqos package/luci-app-eqos
 
 # 自定义定制选项
 sed -i 's#192.168.1.1#10.0.0.1#g' package/base-files/files/bin/config_generate #定制默认IP
