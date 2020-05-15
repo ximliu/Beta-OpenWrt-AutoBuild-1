@@ -28,7 +28,7 @@ git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app
 git clone https://github.com/garypang13/luci-app-eqos package/luci-app-eqos
 
 # 更改eqos语言包目录
-find package/luci-app-eqos/ -maxdepth 1 -depth -name "po" | xargs -i rename -v 's/po/i18n/' {}
+# find package/luci-app-eqos/ -maxdepth 1 -depth -name "po" | xargs -i rename -v 's/po/i18n/' {}
 find package/luci-app-eqos/ -maxdepth 2 -depth -name "zh_Hans" | xargs -i rename -v 's/zh_Hans/zh-cn/' {}
 
 # 自定义定制选项
@@ -156,7 +156,7 @@ CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
 EOF
 
-# 常用LuCI插件(禁用):
+# 常用LuCI插件:
 cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-adbyby-plus=y #adbyby去广告
 CONFIG_PACKAGE_luci-app-webadmin=y #Web管理页面设置
