@@ -21,7 +21,6 @@ svn co https://github.com/kang-mk/openwrt-app-package/trunk/luci-app-passwall pa
 git clone https://github.com/garypang13/luci-app-eqos package/luci-app-eqos
 
 # 更改eqos语言包目录
-# find package/luci-app-eqos/ -maxdepth 1 -depth -name "po" | xargs -i rename -v 's/po/i18n/' {}
 find package/luci-app-eqos/ -maxdepth 2 -depth -name "zh_Hans" | xargs -i rename -v 's/zh_Hans/zh-cn/' {}
 
 # 自定义定制选项
