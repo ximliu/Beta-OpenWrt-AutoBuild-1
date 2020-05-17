@@ -6,6 +6,7 @@
 
 # 更新feeds文件
 cd openwrt
+sed -i 's#openwrt-luci.git;dev-18.06#openwrt-luci.git;dev-19.07#g' feeds.conf.default #luci更新到19.07
 # sed -i 's#lienol https://github.com/Lienol/openwrt-package#lienol https://github.com/kang-mk/Lienol-openwrt-package#g' feeds.conf.default #更换默认包源
 cat feeds.conf.default
 
