@@ -24,6 +24,7 @@ svn co https://github.com/kang-mk/openwrt-app-package/trunk/luci-app-passwall pa
 git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 git clone https://github.com/vernesong/OpenClash package/openclash
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
+git clone https://github.com/Lienol/openwrt-package package
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
 svn co https://github.com/kang-mk/openwrt-app-package/trunk/luci-app-eqos package/luci-app-eqos
 
