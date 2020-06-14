@@ -234,6 +234,14 @@ CONFIG_PACKAGE_luci-theme-bootstrap=y
 # CONFIG_PACKAGE_luci-theme-openwrt is not set
 EOF
 
+# 启用nginx luci:
+cat >> .config <<EOF
+CONFIG_PACKAGE_luci-nginx=y
+CONFIG_PACKAGE_luci-ssl=y
+CONFIG_PACKAGE_luci-ssl-nginx=y
+CONFIG_PACKAGE_luci-ssl-openssl=y
+EOF
+
 # 常用软件包:
 cat >> .config <<EOF
 CONFIG_PACKAGE_curl=y

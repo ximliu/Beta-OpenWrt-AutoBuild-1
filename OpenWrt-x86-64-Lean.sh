@@ -169,20 +169,6 @@ CONFIG_PACKAGE_luci-app-passwall_INCLUDE_kcptun=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_haproxy=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_dns2socks=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_pdnsd=y
-CONFIG_PACKAGE_kcptun-client=y
-CONFIG_PACKAGE_chinadns-ng=y
-CONFIG_PACKAGE_haproxy=y
-CONFIG_PACKAGE_v2ray=y
-CONFIG_PACKAGE_v2ray-plugin=y
-CONFIG_PACKAGE_simple-obfs=y
-CONFIG_PACKAGE_trojan=y
-CONFIG_PACKAGE_brook=y
-CONFIG_PACKAGE_ipt2socks=y
-CONFIG_PACKAGE_shadowsocks-libev-config=y
-CONFIG_PACKAGE_shadowsocks-libev-ss-local=y
-CONFIG_PACKAGE_shadowsocks-libev-ss-redir=y
-CONFIG_PACKAGE_shadowsocksr-libev-alt=y
-CONFIG_PACKAGE_shadowsocksr-libev-ssr-local=y
 EOF
 
 # 常用LuCI插件:
@@ -236,6 +222,14 @@ EOF
 cat >> .config <<EOF
 CONFIG_PACKAGE_luci-theme-argon=y
 CONFIG_PACKAGE_luci-theme-netgear=y
+EOF
+
+# 启用nginx luci:
+cat >> .config <<EOF
+CONFIG_PACKAGE_luci-nginx=y
+CONFIG_PACKAGE_luci-ssl=y
+CONFIG_PACKAGE_luci-ssl-nginx=y
+CONFIG_PACKAGE_luci-ssl-openssl=y
 EOF
 
 # 常用软件包:
