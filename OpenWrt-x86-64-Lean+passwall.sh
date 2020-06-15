@@ -16,15 +16,21 @@ cat feeds.conf.default
 # 替换默认Argon主题（最新版本适配好像有问题,暂取消）
 # rm -rf package/lean/luci-theme-argon && git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 # 替换更新haproxy默认版本
-# rm -rf feeds/packages/net/haproxy && svn co https://github.com/kang-mk/openwrt-app-package/trunk/haproxy feeds/packages/net/haproxy
+rm -rf feeds/packages/net/haproxy && svn co https://github.com/kang-mk/openwrt-app-package/trunk/haproxy feeds/packages/net/haproxy
 
 # 添加第三方软件包
 # svn co https://github.com/kang-mk/openwrt-app-package/trunk/helloworld package/helloworld
+git clone https://github.com/kenzok8/openwrt-packages package/openwrt-packages
+git clone https://github.com/kenzok8/small package/small
 git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 git clone https://github.com/vernesong/OpenClash package/openclash
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
 svn co https://github.com/kang-mk/openwrt-app-package/trunk/luci-app-eqos package/luci-app-eqos
+
+# 更新并安装源
+./scripts/feeds clean
+./scripts/feeds update -a && ./scripts/feeds install -a
 
 # 自定义定制选项
 sed -i 's#192.168.1.1#10.0.0.1#g' package/base-files/files/bin/config_generate #定制默认IP
@@ -148,6 +154,40 @@ CONFIG_PACKAGE_luci-app-ssr-plus=y
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
+EOF
+
+# Passwall插件:
+cat >> .config <<EOF
+CONFIG_PACKAGE_luci-app-passwall=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ipt2socks=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ChinaDNS_NG=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_v2ray-plugin=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_simple-obfs=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Brook=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_kcptun=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_haproxy=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_dns2socks=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_pdnsd=y
+CONFIG_PACKAGE_kcptun-client=y
+CONFIG_PACKAGE_chinadns-ng=y
+CONFIG_PACKAGE_haproxy=y
+CONFIG_PACKAGE_v2ray=y
+CONFIG_PACKAGE_v2ray-plugin=y
+CONFIG_PACKAGE_simple-obfs=y
+CONFIG_PACKAGE_trojan=y
+CONFIG_PACKAGE_brook=y
+CONFIG_PACKAGE_ipt2socks=y
+CONFIG_PACKAGE_shadowsocks-libev-config=y
+CONFIG_PACKAGE_shadowsocks-libev-ss-local=y
+CONFIG_PACKAGE_shadowsocks-libev-ss-redir=y
+CONFIG_PACKAGE_shadowsocksr-libev-alt=y
+CONFIG_PACKAGE_shadowsocksr-libev-ssr-local=y
+CONFIG_PACKAGE_pdnsd-alt=y
+CONFIG_PACKAGE_dns2socks=y
 EOF
 
 # 常用LuCI插件:
