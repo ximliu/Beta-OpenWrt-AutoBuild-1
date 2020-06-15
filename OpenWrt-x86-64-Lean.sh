@@ -20,17 +20,15 @@ rm -rf feeds/packages/net/haproxy && svn co https://github.com/kang-mk/openwrt-a
 
 # 添加第三方软件包
 # svn co https://github.com/kang-mk/openwrt-app-package/trunk/helloworld package/helloworld
-svn co https://github.com/kang-mk/openwrt-app-package/trunk/luci-app-passwall package/luci-app-passwall
-svn co https://github.com/Lienol/openwrt-package/trunk/package/brook package/brook
-svn co https://github.com/Lienol/openwrt-package/trunk/package/kcptun package/kcptun
-svn co https://github.com/Lienol/openwrt-package/trunk/package/chinadns-ng package/chinadns-ng
+git clone https://github.com/kenzok8/openwrt-packages package/openwrt-packages
+git clone https://github.com/kenzok8/small package/small
 git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 git clone https://github.com/vernesong/OpenClash package/openclash
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
 svn co https://github.com/kang-mk/openwrt-app-package/trunk/luci-app-eqos package/luci-app-eqos
 
-# 再次更新并安装源
+# 更新并安装源
 ./scripts/feeds clean
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
