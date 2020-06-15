@@ -252,6 +252,7 @@ EOF
 
 # 其他软件包:
 cat >> .config <<EOF
+CONFIG_HAS_FPU=y
 CONFIG_PACKAGE_zram-swap=y
 EOF
 
