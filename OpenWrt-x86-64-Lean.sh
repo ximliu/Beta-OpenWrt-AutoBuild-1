@@ -19,12 +19,14 @@ cat feeds.conf.default
 # rm -rf feeds/packages/net/haproxy && svn co https://github.com/kang-mk/openwrt-app-package/trunk/haproxy feeds/packages/net/haproxy
 
 # 添加第三方软件包
-# svn co https://github.com/kang-mk/openwrt-app-package/trunk/helloworld package/helloworld
+git clone https://github.com/kenzok8/openwrt-packages package/openwrt-packages
+git clone https://github.com/kenzok8/small package/small
 git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
-git clone https://github.com/vernesong/OpenClash package/openclash
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
-git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
-svn co https://github.com/kang-mk/openwrt-app-package/trunk/luci-app-eqos package/luci-app-eqos
+
+# 再次更新并安装源
+./scripts/feeds clean
+./scripts/feeds update -a && ./scripts/feeds install -a
 
 # 自定义定制选项
 sed -i 's#192.168.1.1#10.0.0.1#g' package/base-files/files/bin/config_generate #定制默认IP

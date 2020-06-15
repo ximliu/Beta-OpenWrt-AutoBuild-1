@@ -19,16 +19,12 @@ cat feeds.conf.default
 rm -rf feeds/packages/net/haproxy && svn co https://github.com/kang-mk/openwrt-app-package/trunk/haproxy feeds/packages/net/haproxy
 
 # 添加第三方软件包
-# svn co https://github.com/kang-mk/openwrt-app-package/trunk/helloworld package/helloworld
 git clone https://github.com/kenzok8/openwrt-packages package/openwrt-packages
 git clone https://github.com/kenzok8/small package/small
 git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
-git clone https://github.com/vernesong/OpenClash package/openclash
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
-git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
-svn co https://github.com/kang-mk/openwrt-app-package/trunk/luci-app-eqos package/luci-app-eqos
 
-# 更新并安装源
+# 再次更新并安装源
 ./scripts/feeds clean
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
