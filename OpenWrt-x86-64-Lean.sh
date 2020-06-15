@@ -21,10 +21,12 @@ cat feeds.conf.default
 # 添加第三方软件包
 # svn co https://github.com/kang-mk/openwrt-app-package/trunk/helloworld package/helloworld
 svn co https://github.com/kang-mk/openwrt-app-package/trunk/luci-app-passwall package/luci-app-passwall
+svn co https://github.com/Lienol/openwrt-package/trunk/package/brook package/brook
+svn co https://github.com/Lienol/openwrt-package/trunk/package/kcptun package/kcptun
+svn co https://github.com/Lienol/openwrt-package/trunk/package/chinadns-ng package/chinadns-ng
 git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 git clone https://github.com/vernesong/OpenClash package/openclash
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
-git clone https://github.com/Lienol/openwrt-package package
 git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
 svn co https://github.com/kang-mk/openwrt-app-package/trunk/luci-app-eqos package/luci-app-eqos
 
@@ -202,7 +204,7 @@ CONFIG_PACKAGE_luci-app-flowoffload=y #Turbo ACC 网络加速
 CONFIG_PACKAGE_luci-app-softethervpn=y #SoftEtherVPN服务器
 CONFIG_PACKAGE_luci-app-haproxy-tcp=y #Haproxy负载均衡
 CONFIG_PACKAGE_luci-app-frpc=y #Frp内网穿透
-#CONFIG_PACKAGE_luci-app-nlbwmon is not set #宽带流量监控
+CONFIG_PACKAGE_luci-app-nlbwmon=y #宽带流量监控
 # CONFIG_PACKAGE_luci-app-diskman is not set #磁盘管理磁盘信息
 # CONFIG_PACKAGE_luci-app-transmission is not set #TR离线下载
 # CONFIG_PACKAGE_luci-app-qbittorrent is not set #QB离线下载

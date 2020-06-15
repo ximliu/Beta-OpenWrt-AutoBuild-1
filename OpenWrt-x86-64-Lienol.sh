@@ -132,8 +132,6 @@ CONFIG_PACKAGE_luci-app-passwall=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ipt2socks=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_socks=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_socks=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ChinaDNS_NG=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray=y
 CONFIG_PACKAGE_luci-app-passwall_INCLUDE_v2ray-plugin=y
@@ -158,6 +156,8 @@ CONFIG_PACKAGE_shadowsocks-libev-ss-local=y
 CONFIG_PACKAGE_shadowsocks-libev-ss-redir=y
 CONFIG_PACKAGE_shadowsocksr-libev-alt=y
 CONFIG_PACKAGE_shadowsocksr-libev-ssr-local=y
+CONFIG_PACKAGE_pdnsd-alt=y
+CONFIG_PACKAGE_dns2socks=y
 EOF
 
 # 常用LuCI插件:
@@ -178,7 +178,7 @@ CONFIG_PACKAGE_luci-app-control-timewol=y #定时唤醒
 CONFIG_PACKAGE_luci-app-control-webrestriction=y #访问限制
 CONFIG_PACKAGE_luci-app-control-weburl=y #网址过滤
 CONFIG_PACKAGE_luci-app-flowoffload=y #Turbo ACC 网络加速
-#CONFIG_PACKAGE_luci-app-nlbwmon is not set #宽带流量监控
+CONFIG_PACKAGE_luci-app-nlbwmon=y #宽带流量监控
 # CONFIG_PACKAGE_luci-app-diskman is not set #磁盘管理磁盘信息
 # CONFIG_PACKAGE_luci-app-smartdns is not set #smartdnsDNS服务
 # CONFIG_PACKAGE_luci-app-adguardhome is not set #ADguardHome去广告服务
@@ -232,14 +232,6 @@ CONFIG_PACKAGE_luci-theme-bootstrap=y
 # CONFIG_PACKAGE_luci-theme-freifunk-generic is not set
 # CONFIG_PACKAGE_luci-theme-material is not set
 # CONFIG_PACKAGE_luci-theme-openwrt is not set
-EOF
-
-# 启用nginx luci:
-cat >> .config <<EOF
-CONFIG_PACKAGE_luci-nginx=y
-CONFIG_PACKAGE_luci-ssl=y
-CONFIG_PACKAGE_luci-ssl-nginx=y
-CONFIG_PACKAGE_luci-ssl-openssl=y
 EOF
 
 # 常用软件包:
