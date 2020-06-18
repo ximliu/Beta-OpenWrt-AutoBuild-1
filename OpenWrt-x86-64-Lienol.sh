@@ -228,6 +228,7 @@ EOF
 
 # LuCI主题:
 cat >> .config <<EOF
+CONFIG_PACKAGE_luci-theme-atmaterial=y
 CONFIG_PACKAGE_luci-theme-argon-dark-mod=y
 CONFIG_PACKAGE_luci-theme-argon-light-mod=y
 CONFIG_PACKAGE_luci-theme-bootstrap=y
@@ -254,9 +255,6 @@ EOF
 # 其他软件包:
 cat >> .config <<EOF
 CONFIG_HAS_FPU=y
-CONFIG_PACKAGE_autocore=y
-CONFIG_PACKAGE_kmod-zram=y
-CONFIG_PACKAGE_zram-swap=y
 EOF
 
 # 
