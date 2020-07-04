@@ -22,6 +22,10 @@ git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverc
 ./scripts/feeds clean
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
+# 替换更新passwall和ssrplus+
+rm -rf package/openwrt-packages/luci-app-passwall
+rm -rf package/openwrt-packages/luci-app-ssr-plus && svn co https://github.com/fw876/helloworld package/openwrt-packages/luci-app-ssr-plus
+
 # 自定义定制选项
 sed -i 's#192.168.1.1#10.0.0.1#g' package/base-files/files/bin/config_generate #定制默认IP
 sed -i 's#max-width:200px#max-width:1000px#g' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm #修改首页样式
