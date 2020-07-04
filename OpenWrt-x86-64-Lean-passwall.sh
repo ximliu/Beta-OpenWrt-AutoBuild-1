@@ -16,13 +16,9 @@ cat feeds.conf.default
 
 # 添加第三方软件包
 git clone https://github.com/kenzok8/openwrt-packages package/openwrt-packages
+git clone https://github.com/db-one/small package/small
 git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
-svn co https://github.com/Lienol/openwrt-package/trunk/package /package/small
-
-# 再次更新并安装源
-./scripts/feeds clean
-./scripts/feeds update -a && ./scripts/feeds install -a
 
 # 替换更新passwall和ssrplus+
 rm -rf package/openwrt-packages/luci-app-passwall && svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-passwall package/openwrt-packages/luci-app-passwall
