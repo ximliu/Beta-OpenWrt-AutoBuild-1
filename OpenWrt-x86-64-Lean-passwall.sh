@@ -8,6 +8,7 @@ cd openwrt
 
 # 更新feeds文件
 # sed -i 's@#src-git helloworld@src-git helloworld@g' feeds.conf.default #启用helloworld
+sed -i 's@https://git.openwrt.org/feed/packages.git@https://github.com/coolsnowwolf/packages@g' feeds.conf.default #更换Lean稳定packages
 cat feeds.conf.default
 
 # 更新并安装源
@@ -15,17 +16,17 @@ cat feeds.conf.default
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
 # 添加第三方软件包
-git clone https://github.com/db-one/openwrt-app-packages package/openwrt-packages
-git clone https://github.com/db-one/OpenAppFilter package/OpenAppFilter
-git clone https://github.com/db-one/luci-app-serverchan package/luci-app-serverchan
+git clone https://github.com/kenzok8/openwrt-packages package/openwrt-packages
+git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
+git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 
 # 替换更新passwall和ssrplus+
-rm -rf package/openwrt-packages/luci-app-passwall && svn co https://github.com/db-one/Lienol-openwrt-package/trunk/lienol/luci-app-passwall package/openwrt-packages/luci-app-passwall
-rm -rf package/openwrt-packages/luci-app-ssr-plus && svn co https://github.com/db-one/helloworld package/openwrt-packages/helloworld
+rm -rf package/openwrt-packages/luci-app-passwall && svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-passwall package/openwrt-packages/luci-app-passwall
+rm -rf package/openwrt-packages/luci-app-ssr-plus && svn co https://github.com/fw876/helloworld package/openwrt-packages/helloworld
 
 # 添加passwall依赖库
 # git clone https://github.com/kenzok8/small package/small
-svn co https://github.com/db-one/Lienol-openwrt-package/trunk/package package/small
+svn co https://github.com/Lienol/openwrt-package/trunk/package package/small
 rm -rf package/small/openssl1.1
 rm -rf package/small/shadowsocksr-libev
 rm -rf package/small/syncthing
