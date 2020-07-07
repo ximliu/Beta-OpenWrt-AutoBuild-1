@@ -1,4 +1,4 @@
-  
+
 #!/bin/bash
 
 cd openwrt
@@ -8,7 +8,7 @@ cd openwrt
 
 # 更新feeds文件
 # sed -i 's@#src-git helloworld@src-git helloworld@g' feeds.conf.default #启用helloworld
-sed -i 's@https://git.openwrt.org/feed/packages.git@https://github.com/coolsnowwolf/packages@g' feeds.conf.default #更换Lean稳定packages
+# sed -i 's@https://git.openwrt.org/feed/packages.git@https://github.com/coolsnowwolf/packages@g' feeds.conf.default #更换Lean稳定packages
 cat feeds.conf.default
 
 # 更新并安装源
