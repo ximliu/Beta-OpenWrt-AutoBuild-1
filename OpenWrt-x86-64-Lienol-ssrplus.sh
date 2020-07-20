@@ -21,6 +21,11 @@ git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
 
+# 替换更新luci-app-wrtbwmon
+rm -rf package/lean/luci-app-wrtbwmon
+git clone https://github.com/brvphoenix/wrtbwmon package/wrtbwmon
+git clone https://github.com/brvphoenix/luci-app-wrtbwmon package/luci-app-wrtbwmon
+
 # 替换更新passwall和ssrplus+
 rm -rf package/openwrt-packages/luci-app-passwall && svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-passwall package/openwrt-packages/luci-app-passwall
 rm -rf package/openwrt-packages/luci-app-ssr-plus && svn co https://github.com/fw876/helloworld package/openwrt-packages/helloworld
@@ -192,6 +197,7 @@ CONFIG_PACKAGE_luci-app-control-timewol=y #定时唤醒
 CONFIG_PACKAGE_luci-app-control-webrestriction=y #访问限制
 CONFIG_PACKAGE_luci-app-control-weburl=y #网址过滤
 CONFIG_PACKAGE_luci-app-nlbwmon=y #宽带流量监控
+CONFIG_PACKAGE_luci-app-wrtbwmon=y #实时流量监测
 CONFIG_PACKAGE_luci-app-sfe=y #高通开源的 Shortcut FE 转发加速引擎
 # CONFIG_PACKAGE_luci-app-flowoffload is not set #开源 Linux Flow Offload 驱动
 # CONFIG_PACKAGE_luci-app-diskman is not set #磁盘管理磁盘信息
@@ -205,7 +211,6 @@ CONFIG_PACKAGE_luci-app-sfe=y #高通开源的 Shortcut FE 转发加速引擎
 # CONFIG_PACKAGE_luci-app-mwan3helper is not set #多拨负载均衡
 # CONFIG_PACKAGE_luci-app-mwan3 is not set #多线多拨
 # CONFIG_PACKAGE_luci-app-hd-idle is not set #磁盘休眠
-# CONFIG_PACKAGE_luci-app-wrtbwmon is not set #实时流量监测
 # CONFIG_PACKAGE_luci-app-zerotier is not set #Zerotier内网穿透
 #CONFIG_PACKAGE_luci-app-sqm is not set #SQM智能队列管理
 #
