@@ -27,8 +27,8 @@ rm -rf package/openwrt-packages/luci-app-ssr-plus && svn co https://github.com/f
 
 # 替换更新luci-app-wrtbwmon
 rm -rf package/lean/luci-app-wrtbwmon
-git clone https://github.com/brvphoenix/luci-app-wrtbwmon package/openwrt-packages
-git clone https://github.com/brvphoenix/wrtbwmon package/openwrt-packages
+git clone https://github.com/brvphoenix/luci-app-wrtbwmon package/openwrt-packages/luci-app-wrtbwmon
+git clone https://github.com/brvphoenix/wrtbwmon package/openwrt-packages/wrtbwmon
 
 # 自定义定制选项
 sed -i 's#192.168.1.1#10.0.0.1#g' package/base-files/files/bin/config_generate #定制默认IP
@@ -208,7 +208,7 @@ CONFIG_PACKAGE_luci-app-sfe=y #高通开源的 Shortcut FE 转发加速引擎
 # CONFIG_PACKAGE_luci-app-mwan3 is not set #多线多拨
 # CONFIG_PACKAGE_luci-app-hd-idle is not set #磁盘休眠
 # CONFIG_PACKAGE_luci-app-zerotier is not set #Zerotier内网穿透
-#CONFIG_PACKAGE_luci-app-sqm is not set #SQM智能队列管理
+# CONFIG_PACKAGE_luci-app-sqm is not set #SQM智能队列管理
 #
 # passwall相关(禁用):
 #

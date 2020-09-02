@@ -37,8 +37,8 @@ rm -rf feeds/packages/net/haproxy && svn co https://github.com/lienol/openwrt-pa
 
 # 替换更新luci-app-wrtbwmon
 rm -rf package/lean/luci-app-wrtbwmon
-git clone https://github.com/brvphoenix/luci-app-wrtbwmon package/openwrt-packages
-git clone https://github.com/brvphoenix/wrtbwmon package/openwrt-packages
+git clone https://github.com/brvphoenix/luci-app-wrtbwmon package/openwrt-packages/luci-app-wrtbwmon
+git clone https://github.com/brvphoenix/wrtbwmon package/openwrt-packages/wrtbwmon
 
 # 自定义定制选项
 sed -i 's#192.168.1.1#10.0.0.1#g' package/base-files/files/bin/config_generate #定制默认IP
