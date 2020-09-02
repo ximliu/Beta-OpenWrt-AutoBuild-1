@@ -35,6 +35,11 @@ svn co https://github.com/xiaorouji/openwrt-package/trunk/package package/small
 # 替换更新haproxy默认版本
 rm -rf feeds/packages/net/haproxy && svn co https://github.com/lienol/openwrt-packages/trunk/net/haproxy feeds/packages/net/haproxy
 
+# 替换更新luci-app-wrtbwmon
+rm -rf package/lean/luci-app-wrtbwmon
+git clone https://github.com/brvphoenix/luci-app-wrtbwmon package/openwrt-packages
+git clone https://github.com/brvphoenix/wrtbwmon package/openwrt-packages
+
 # 自定义定制选项
 sed -i 's#192.168.1.1#10.0.0.1#g' package/base-files/files/bin/config_generate #定制默认IP
 sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings #取消系统默认密码
@@ -212,7 +217,7 @@ CONFIG_PACKAGE_luci-app-sfe=y #高通开源的 Shortcut FE 转发加速引擎
 # CONFIG_PACKAGE_luci-app-airplay2 is not set #Apple AirPlay2音频接收服务器
 # CONFIG_PACKAGE_luci-app-music-remote-center is not set #PCHiFi数字转盘遥控
 # CONFIG_PACKAGE_luci-app-usb-printer is not set #USB打印机
-#CONFIG_PACKAGE_luci-app-sqm is not set #SQM智能队列管理
+# CONFIG_PACKAGE_luci-app-sqm is not set #SQM智能队列管理
 #
 # VPN相关插件(禁用):
 #
