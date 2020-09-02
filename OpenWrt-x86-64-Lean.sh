@@ -247,6 +247,7 @@ EOF
 # 常用软件包:
 cat >> .config <<EOF
 CONFIG_PACKAGE_curl=y
+CONFIG_PACKAGE_wrtbwmon=y
 CONFIG_PACKAGE_htop=y
 CONFIG_PACKAGE_nano=y
 # CONFIG_PACKAGE_screen=y
