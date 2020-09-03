@@ -25,11 +25,6 @@ git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge 
 rm -rf package/openwrt-packages/luci-app-passwall && svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-app-passwall package/openwrt-packages/luci-app-passwall
 rm -rf package/openwrt-packages/luci-app-ssr-plus && svn co https://github.com/fw876/helloworld package/openwrt-packages/helloworld
 
-# 替换更新luci-app-wrtbwmon
-rm -rf package/lean/luci-app-wrtbwmon
-git clone https://github.com/brvphoenix/luci-app-wrtbwmon package/openwrt-packages/luci-app-wrtbwmon
-git clone https://github.com/brvphoenix/wrtbwmon package/openwrt-packages/wrtbwmon
-
 # 自定义定制选项
 sed -i 's#192.168.1.1#10.0.0.1#g' package/base-files/files/bin/config_generate #定制默认IP
 sed -i 's#max-width:200px#max-width:1000px#g' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm #修改首页样式
